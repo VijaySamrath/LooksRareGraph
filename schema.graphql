@@ -1,0 +1,44 @@
+type Transfer @entity {
+    # Transaction Hash
+    id: ID!
+    
+    #Block number
+    block: BigInt!
+
+    #Sender of Token 
+    previousOwner: String!
+
+    #Receiver of Token
+    newOwner: String!
+
+}
+
+type User @entity {
+  id: ID!
+  block: BigInt!
+
+  collection: String!
+  tokenId: BigInt!
+  royaltyRecipient: String!
+  amount: BigInt!
+}
+
+type Ask @entity {
+  id: ID!
+  block: BigInt!
+
+  taker: String!
+  maker: String!
+  strategy: String!
+
+}
+
+type Bid @entity {
+  id: ID!
+  block: BigInt!
+
+  taker: String!
+  maker: String!
+  strategy: String!
+
+}
